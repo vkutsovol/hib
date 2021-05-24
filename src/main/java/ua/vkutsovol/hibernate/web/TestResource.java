@@ -4,11 +4,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorld {
+@RequestMapping("search")
+public class TestResource {
 
-    @RequestMapping("/test")
-    public String index() {
-        return "Greetings from Spring Boot!";
-    }
+	@RequestMapping("/test")
+	public String index() {
+		return "Test SEarch";
+	}
 
 }

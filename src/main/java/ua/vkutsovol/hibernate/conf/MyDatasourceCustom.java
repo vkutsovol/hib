@@ -1,22 +1,22 @@
 package ua.vkutsovol.hibernate.conf;
 
+import javax.sql.DataSource;
+
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import javax.sql.DataSource;
-
 @Configuration
-@Profile("localhost")
-public class MyDatasource {
+@Profile("custom")
+public class MyDatasourceCustom {
     @Bean
     public DataSource datasource() {
         return DataSourceBuilder.create()
                 .driverClassName("org.postgresql.Driver")
-                .url("jdbc:postgresql://172.17.0.2:5432/hib")
+                .url("jdbc:postgresql://sq-postgres.docker/search")
                 .username("postgres")
-                .password("mysecretpassword")
+                .password("postgres")
                 .build();
     }
 }
